@@ -1,7 +1,5 @@
 package org.aryak.numbers;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -37,7 +35,7 @@ public class PrintAllDivisors {
         Set<Integer> divisors = new TreeSet<>();
 
         // O (sq. root of n)
-        for ( int i = 1; i <= (int) Math.sqrt(n) + 1; i++ ) {
+        for ( int i = 1; i <=  Math.sqrt(n) + 1; i++ ) {
             if ( n % i == 0 ) {
                 divisors.add(i);
                 // set ensures no duplicate goes here. e.g. 6x6=36 [6 will go 2 times in arraylist]
