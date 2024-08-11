@@ -106,27 +106,38 @@ public class SinglyLinkedList {
         }
     }
 
-    // TODO : need to complete this function
     public void insertSorted(int value) {
         Node node = new Node(value);
         if ( head != null ) {
             Node n = head;
-            while ( n.getNext() != null ) {
-                if ( n.getData() > value ) {
-                    Node q = n;
-                    n = node;
-                    node.setNext(q);
-                }
+            Node temp = head;
+            while ( n != null &&  n.getData() < value) {
+                temp = n;
                 n = n.getNext();
             }
-            // append the node
-            if ( n.getData() > value ) {
-                Node q = n;
-                n = node;
-                node.setNext(q);
-            }
+            node.setNext(temp.getNext());
+            temp.setNext(node);
         } else {
             head = node;
         }
+    }
+
+    public int searchSorted(int value) {
+        int idx = 0;
+        if ( head != null ) {
+            Node n = head;
+            while ( n != null ) {
+                System.out.print(n.getData() + " ");
+                if ( n.getData() > value ) {
+                    return -1; // element not found
+                }
+                if ( n.getData() == value ) {
+                    return idx;
+                }
+                idx++;
+                n = n.getNext();
+            }
+        }
+        return idx;
     }
 }

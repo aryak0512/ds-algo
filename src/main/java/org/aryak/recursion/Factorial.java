@@ -7,7 +7,7 @@ public class Factorial {
 
     public int fact(int n) {
         if ( n > 0 )
-            return n * fact(n - 1);
+            return  fact(n - 1) * n;
         return 1;
     }
 

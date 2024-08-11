@@ -6,11 +6,14 @@ public class ClientProgram {
 
         list.insertSorted(1);
         list.insertSorted(2);
+        list.insertSorted(16);
+        list.insertSorted(20);
+        list.insertSorted(22);
+        list.insertSorted(18);
 
         // 45 55 65 75
         list.print();
         System.out.println();
-        System.out.println(list.getLength());
 
     }
 }
